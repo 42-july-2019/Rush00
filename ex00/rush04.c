@@ -6,26 +6,19 @@
 /*   By: alabreui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/07 17:15:54 by alabreui          #+#    #+#             */
-/*   Updated: 2019/07/07 17:18:35 by alabreui         ###   ########.fr       */
+/*   Updated: 2019/07/07 20:23:49 by dbey             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <unistd.h>
 
 void	ft_putchar(char c);
 
 int		check_if_valid(int x, int y)
 {
-	int		index;
-	char	*message;
-
 	if (x <= 0 || y <= 0)
 	{
-		index = 0;
-		message = "Error : one of the parameters is smaller than 1";
-		while (message[index] != '\0')
-		{
-			ft_putchar(message[index]);
-			index++;
-		}
+		write(1, "Error : one of the parameters is smaller than 1", 47);
 		return (0);
 	}
 	return (1);
